@@ -1,0 +1,11 @@
+.headers {
+    display: flex;
+    height:3rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo_title {
+    display: flex;
+    align-items: center;
+}
