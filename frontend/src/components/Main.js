@@ -10,6 +10,7 @@ import DisplayQuote from './DisplayQuote'
 const Main = () => {
 
     const [addQuote, setAddQuote] = useState(false);
+    const [fetchData, setfetchData] = useState(true);
     const closeModal = () =>{
         setAddQuote(false);
     }
@@ -24,13 +25,14 @@ const Main = () => {
               },
               body: JSON.stringify(data)
         })
+        setfetchData(!fetchData)
     }
     
   return (
     <div className="main_container">
         <Button variant="contained" color="success" onClick={()=>{setAddQuote(true)}}>Add Quote +</Button>
         {addQuote && <AddQuote closeModal={closeModal} modalState={addQuote} getData={post_request_data}/>}
-        <DisplayQuote />
+        <DisplayQuote fetchData={fetchData}/>
     </div>
   )
 }
