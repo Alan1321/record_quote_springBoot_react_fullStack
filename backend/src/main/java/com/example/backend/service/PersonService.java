@@ -1,6 +1,6 @@
-package com.example.fullstack.service;
+package com.example.backend.service;
 
-import com.example.fullstack.model.Person;
+import com.example.backend.model.Person;
 
 import java.util.List;
 

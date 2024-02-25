@@ -1,6 +1,6 @@
-package com.example.fullstack.repository;
+package com.example.backend.repository;
 
-import com.example.fullstack.model.Person;
+import com.example.backend.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

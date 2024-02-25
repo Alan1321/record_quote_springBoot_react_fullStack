@@ -1,7 +1,7 @@
-package com.example.fullstack.controller;
+package com.example.backend.controller;
 
-import com.example.fullstack.model.Person;
-import com.example.fullstack.service.PersonService;
+import com.example.backend.model.Person;
+import com.example.backend.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
