@@ -6,17 +6,20 @@ import { Button } from '@mui/material'
 
 import TextField from '@mui/material/TextField';
 
-import clsx from 'clsx';
-
 import "../styles/add_quote.css"
 
-const AddQuote = ({ closeModal, modalState, data }) => {
+const AddQuote = ({ closeModal, modalState, getData }) => {
 
     const [nameData, setnameData] = useState(null);
     const[quoteData, setquoteData] = useState(null);
 
-    const consoleData = (e) =>{
-        console.log(e.target)
+    const submitHandler = () =>{
+        getData({
+            "name":nameData,
+            "quote":quoteData
+        })
+        setnameData("");
+        setquoteData("");
     }
 
   return (
@@ -44,11 +47,13 @@ const AddQuote = ({ closeModal, modalState, data }) => {
                 <div className="quote_container">
                     <div className="inputss">
                         <h1 className="name">Name</h1>
-                        <TextField id="outlined-basic" label="Enter Name" variant="outlined" style={{width:"90%"}}/>
+                        <TextField id="outlined-basic" label="Enter Name" variant="outlined" style={{width:"90%"}} onChange={(e)=>setnameData(e.target.value)} value={nameData}/>
                         <h1 className="name">Quote</h1>
-                        <TextField id="outlined-basic" label="Enter Quote" variant="outlined" style={{width:"90%"}}/>
+                        <TextField id="outlined-basic" label="Enter Quote" variant="outlined" style={{width:"90%"}} onChange={(e)=>setquoteData(e.target.value)} value={quoteData}/>
                         <div className="submit_inputs">
-                            <Button variant="contained" color="success" onClick={consoleData}>Submit</Button>
+                            <Button variant="contained" color="success" 
+                            onClick={submitHandler}
+                            >Submit</Button>
                         </div>
                     </div>
                 </div>
