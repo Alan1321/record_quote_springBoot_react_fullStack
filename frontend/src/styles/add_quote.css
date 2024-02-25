@@ -1,0 +1,33 @@
+.close_button {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    cursor: pointer;
+}
+
+
+
+.add_quote_main_container {
+    display: flex;
+    /* background-color: white; */
+    width: 100%;
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote_container {
+    width: 45rem;
+    height:25rem;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.inputss {
+    width: 100%;
+    text-align: center;
+}
+
+.submit_inputs {
+    margin-top: 2rem;
+}
