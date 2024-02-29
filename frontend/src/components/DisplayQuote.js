@@ -6,28 +6,6 @@ import DisplayBox from './DisplayBox'
 import { useScrollTrigger } from '@mui/material'
 
 const DisplayQuote = ({ fetchData }) => {
-    const data = [
-        {
-            "name":"Alan",
-            "quote":"YOLO"
-        },
-        {
-            "name":"Sanjog",
-            "quote":"Na, we live twice."
-        },
-        {
-            "name":"Sanjog",
-            "quote":"Na, we live twice."
-        },
-        {
-            "name":"Sanjog",
-            "quote":"Na, we live twice."
-        },
-        {
-            "name":"Sanjog",
-            "quote":"Na, we live twice."
-        }
-    ]
 
     const [db_data, setData] = useState([]);
 

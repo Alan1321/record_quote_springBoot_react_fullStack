@@ -30,9 +30,9 @@ const Main = () => {
     
   return (
     <div className="main_container">
-        <Button variant="contained" color="success" onClick={()=>{setAddQuote(true)}}>Add Quote +</Button>
+        {!addQuote && <Button variant="contained" color="success" onClick={()=>{setAddQuote(true)}}>Add Quote +</Button>}
         {addQuote && <AddQuote closeModal={closeModal} modalState={addQuote} getData={post_request_data}/>}
-        <DisplayQuote fetchData={fetchData}/>
+        {!addQuote && <DisplayQuote fetchData={fetchData}/>}
     </div>
   )
 }
