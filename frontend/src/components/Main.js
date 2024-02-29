@@ -15,7 +15,7 @@ const Main = () => {
         setAddQuote(false);
     }
     const post_request_data = (data) =>{
-        const api = "http://localhost:8080/person/add"
+        const api = "http://localhost:8080/person/"
 
         fetch(api,{
             method:"POST",

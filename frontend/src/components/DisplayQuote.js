@@ -32,7 +32,7 @@ const DisplayQuote = ({ fetchData }) => {
     const [db_data, setData] = useState([]);
 
     useEffect(()=>{
-        const api = "http://localhost:8080/person/getAll"
+        const api = "http://localhost:8080/person/"
         fetch(api,{
             method:"GET",
             headers: {
