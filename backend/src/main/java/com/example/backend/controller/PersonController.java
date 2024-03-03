@@ -14,14 +14,19 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @PostMapping("/add")
+    @PostMapping("/")
     public String add(@RequestBody Person person) {
         personService.savePerson(person);
         return "New Person added";
     }
 
-    @GetMapping("/getAll")
+    @GetMapping("/")
     public List<Person> list(){
         return personService.getAllPerson();
+    }
+
+    @DeleteMapping("/{id}")
+    public void list(@PathVariable int id) {
+        personService.deletePerson(id);
     }
 }

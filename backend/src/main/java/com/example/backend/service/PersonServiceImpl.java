@@ -22,4 +22,9 @@ public class PersonServiceImpl implements PersonService{
     public List<Person> getAllPerson() {
         return personRepository.findAll();
     }
+
+    @Override
+    public void deletePerson(int id) {
+        personRepository.deleteById(id);
+    }
 }
