@@ -11,25 +11,27 @@ import java.util.List;
 public class QuoteServiceImpl implements QuoteService{
 
     @Autowired
-    private QuoteRepository QuoteRepository;
+    private QuoteRepository quoteRepository;
 
     @Override
-    public Quote saveQuote(Quote Quote) {
-        return QuoteRepository.save(Quote);
+    public Quote saveQuote(Quote quote) {
+        return quoteRepository.save(quote);
     }
 
     @Override
     public List<Quote> getAllQuote() {
-        return QuoteRepository.findAll();
+        return quoteRepository.findAll();
     }
 
     @Override
     public void deleteQuote(int id) {
-        QuoteRepository.deleteById(id);
+        quoteRepository.deleteById(id);
     }
 
-//    @Override
-//    public void replaceQuote(int id){
-//        QuoteRepository.
-//    }
+    @Override
+    public void replaceQuote(int id, Quote quote){
+        Quote quote_in_db = quoteRepository.findById(id).get();
+        quote_in_db.setQuote(quote.getQuote());
+        quoteRepository.save(quote_in_db);
+    }
 }

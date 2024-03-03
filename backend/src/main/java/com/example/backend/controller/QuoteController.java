@@ -31,8 +31,9 @@ public class QuoteController {
         return "Quote Deleted!!";
     }
 
-//    @PutMapping("/{id}")
-//    public String replace(@PathVariable int id, @RequestBody Quote Quote) {
-//
-//    }
+    @PutMapping("/{id}")
+    public String replace(@PathVariable int id, @RequestBody Quote quote) {
+        QuoteService.replaceQuote(id, quote);
+        return "Quote Upadted!!";
+    }
 }
