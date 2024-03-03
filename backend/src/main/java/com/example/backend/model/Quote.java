@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Person {
+public class Quote {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,7 +14,7 @@ public class Person {
     private String name;
     private String quote;
 
-    public Person() {
+    public Quote() {
 
     }
 
