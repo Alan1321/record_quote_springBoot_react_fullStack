@@ -8,7 +8,7 @@ public interface QuoteService {
     public Quote saveQuote(Quote quote);
     public List<Quote> getAllQuote();
 
-    public void deleteQuote(int id);
+    public List<Quote> deleteQuote(int id);
 
     public void replaceQuote(int id, Quote quote);
 }

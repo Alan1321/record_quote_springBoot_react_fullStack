@@ -24,8 +24,9 @@ public class QuoteServiceImpl implements QuoteService{
     }
 
     @Override
-    public void deleteQuote(int id) {
+    public List<Quote> deleteQuote(int id) {
         quoteRepository.deleteById(id);
+        return quoteRepository.findAll();
     }
 
     @Override

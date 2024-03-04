@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 
 import "../styles/display_quote.css"
 import DisplayBox from './DisplayBox'
+import { api } from '../config'
+
 import { useScrollTrigger } from '@mui/material'
 
 const DisplayQuote = ({ fetchData }) => {
@@ -10,7 +12,6 @@ const DisplayQuote = ({ fetchData }) => {
     const [db_data, setData] = useState([]);
 
     useEffect(()=>{
-        const api = "http://localhost:8080/person/"
         fetch(api,{
             method:"GET",
             headers: {
@@ -30,7 +31,7 @@ const DisplayQuote = ({ fetchData }) => {
         <h1 className="display_title">Quotes in DB</h1>
         <div className="mini_displays">
             {db_data.map((item)=>(
-                <DisplayBox data={item} />
+                <DisplayBox data={item} setData={setData}/>
             ))}
         </div>
     </div>

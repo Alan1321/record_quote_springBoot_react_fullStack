@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/quote")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 public class QuoteController {
     @Autowired
     private QuoteService QuoteService;
@@ -26,14 +26,15 @@ public class QuoteController {
     }
 
     @DeleteMapping("/{id}")
-    public String delete(@PathVariable int id) {
+    @CrossOrigin
+    public List<Quote> delete(@PathVariable int id) {
         QuoteService.deleteQuote(id);
-        return "Quote Deleted!!";
+        return QuoteService.getAllQuote();
     }
 
     @PutMapping("/{id}")
-    public String replace(@PathVariable int id, @RequestBody Quote quote) {
+    public List<Quote> replace(@PathVariable int id, @RequestBody Quote quote) {
         QuoteService.replaceQuote(id, quote);
-        return "Quote Upadted!!";
+        return QuoteService.getAllQuote();
     }
 }
