@@ -26,7 +26,6 @@ public class QuoteController {
     }
 
     @DeleteMapping("/{id}")
-    @CrossOrigin
     public List<Quote> delete(@PathVariable int id) {
         QuoteService.deleteQuote(id);
         return QuoteService.getAllQuote();

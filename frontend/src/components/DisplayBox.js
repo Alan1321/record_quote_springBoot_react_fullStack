@@ -11,9 +11,9 @@ const DisplayBox = ({ data, setData }) => {
 
   }
   const deleteHandler = () =>{
-    fetch(api,{
+    const request_api = api + data.id
+    fetch(request_api,{
       method:"DELETE",
-      mode:"cors",
       headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
@@ -21,7 +21,6 @@ const DisplayBox = ({ data, setData }) => {
     }).then((response)=>{
         return response.json()   
     }).then((responseData)=>{
-        console.log(responseData)
         setData(responseData)
     })
   }
