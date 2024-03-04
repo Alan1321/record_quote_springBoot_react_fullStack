@@ -8,10 +8,10 @@ import TextField from '@mui/material/TextField';
 
 import "../styles/add_quote.css"
 
-const AddQuote = ({ closeModal, modalState, getData }) => {
+const AddQuote = ({ closeModal, modalState, getData, name, quote, disablename }) => {
 
-    const [nameData, setnameData] = useState(null);
-    const[quoteData, setquoteData] = useState(null);
+    const [nameData, setnameData] = useState(name);
+    const[quoteData, setquoteData] = useState(quote);
 
     const submitHandler = () =>{
         getData({
@@ -47,7 +47,7 @@ const AddQuote = ({ closeModal, modalState, getData }) => {
                 <div className="quote_container">
                     <div className="inputss">
                         <h1 className="name">Name</h1>
-                        <TextField id="outlined-basic" label="Enter Name" variant="outlined" style={{width:"90%"}} onChange={(e)=>setnameData(e.target.value)} value={nameData}/>
+                        <TextField id="outlined-basic" label="Enter Name" variant="outlined" style={{width:"90%"}} disabled={disablename} onChange={(e)=>setnameData(e.target.value)} value={nameData}/>
                         <h1 className="name">Quote</h1>
                         <TextField id="outlined-basic" label="Enter Quote" variant="outlined" style={{width:"90%"}} onChange={(e)=>setquoteData(e.target.value)} value={quoteData}/>
                         <div className="submit_inputs">
